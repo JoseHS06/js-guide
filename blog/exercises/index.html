@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/vendor.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <title>👾 Ejercicios logicos</title>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-121642637-3');
+    </script>
+    <script src="https://unpkg.com/vue@3"></script>
+
+</head>
+
+</head>
+
+<body id="app" class="bg-black">
+
+    <section class="py-0">
+        <div class="container-fluid">
+            <div class="row justify-content-between">
+
+                <!-- navigation -->
+                <aside class="col-lg-3 p-3 doc-sidebar">
+                    <div class="sticky">
+                        <nav class="navbar navbar-vertical navbar-expand-lg navbar-light">
+                            <div>
+                                <a href="" class="navbar-brand"><i class="fs-80 fab fa-js"
+                                        style="color: #f8e13c"></i><span class="badge badge-dark ml-2">1.0.0</span></a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                            </div>
+
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul id="page-nav" class="nav nav-vertical-2 flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="collapse" href="#menu-1" role="button"
+                                            aria-expanded="true" aria-controls="menu-1">Ejercicios nivel aprendiz</a>
+                                        <div class="collapse" id="menu-1" data-parent="#page-nav">
+                                            <ul class="nav flex-column">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="exercise1.html">Ejercicio 1</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="exercise2.html">Ejercicio 2</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </aside>
+                <!-- / navigation -->
+
+
+                <!-- content -->
+                <article class="col-lg-9 doc-content">
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="doc-content-header">
+                                <div class="row align-items-center">
+                                    <div class="col-6 col-lg-10">
+                                        <nav aria-label="breadcrumb d-none d-inline-flex-lg">
+                                            <a href="../index.html" class="breadcrumb-back" title="Back"></a>
+                                            <ol class="breadcrumb d-none d-lg-inline-flex">
+                                                <li class="breadcrumb-item"><a href="../../blog/">Blog</a></li>
+                                            </ol>
+                                        </nav>
+                                    </div>
+                                    <div class="col text-right">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row doc-content-body">
+                        <article class="col-md-9">
+                            <p>En esta sección encontrarás diferentes ejercicios logicos que te ayudarán a practicar tu habilidad con los algoritmos y descubrir más funciones que te ayudaran a seguir creciendo</p>
+
+                        </article>
+
+                        <aside class="col-md-3 d-none d-md-block">
+                            <div class="sticky">
+                                <ul id="toc" class="nav flex-column toc">
+                                    <li class="nav-item">
+                                        <a data-scroll="" class="nav-link" href="#setup">Setting up</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a data-scroll="" class="nav-link" href="#template">Starter Template</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </aside>
+
+
+                    </div>
+
+                </article>
+                <!-- / content -->
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- footer -->
+    <footer class="bg-dark">
+        <div class="container">
+            <div class="row gutter-3">
+                <div class="col-12 col-md-2">
+                    <a href="./"><i class="fs-80 fab fa-js"></i></a>
+                </div>
+                <div class="col-12 col-md-6 text-white">
+                    <p class="mb-4"><i>"A los necios que creen que pueden cambiar el mundo con nuevas ideas".</i>
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <ul class="list-group list-group-minimal">
+                                <li class="list-group-item"><a href="https://github.com/JoseHS06/js-course"
+                                        class="link"><i class="fs-20 fab fa-github"></i> Github</a></li>
+                                <li class="list-group-item"><a href="https://discord.gg/SzNYeBtw" class="link"><i
+                                            class="fs-20 fab fa-discord"></i> Discord</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- / footer -->
+
+
+    <script>
+        const {
+            createApp
+        } = Vue
+    
+        createApp({
+            data() {
+                return {
+                    ws: '/services/',
+                    globalData: [{
+                            "name": "Alex",
+                            "solution": `
+    const palindromo = (cadena) => {
+        let invertido = cadena.split("").reverse().join("");
+        return invertido === cadena; 
+    };
+    
+    console.log(palindromo("otto"));`
+                        },
+                        {
+                            "name": "Aline",
+                            "solution": `
+    function solution(inputString) {
+        let validate = true;
+        let arrayWord = [...inputString];
+        let j = arrayWord.length -1;
+        for(let i = 0 ; i < arrayWord.length; i++)
+        {
+            if (arrayWord[i] !== arrayWord[j]){
+                validate = false;
+            }
+            j--;
+        }
+        return validate;
+    }
+    
+    console.log(solution("aabaa"));
+                        `
+                        }
+                    ],
+                }
+            },
+            mounted() {},
+            methods() {},
+    
+        }).mount('#app')
+    </script>
+    <script src="../../assets/js/vendor.min.js"></script>
+    <script src="../../assets/js/app.js"></script>
+</body>
+
+
+
+</html>
