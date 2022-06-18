@@ -8,28 +8,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/css/vendor.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
-
-    <title>👾 Ejercicio 1</title>
-
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-121642637-3');
-    </script>
     <script src="https://unpkg.com/vue@3"></script>
-
+    <title>👾 Ejercicio 1</title>
 </head>
 
 </head>
 
-<body id="app" class="bg-black">
+<body class="bg-black">
 
-    <section class="py-0">
+    <section  id="app" class="py-0">
         <div class="container-fluid">
             <div class="row justify-content-between">
 
@@ -84,7 +71,8 @@
                                             <a href="../index.html" class="breadcrumb-back" title="Back"></a>
                                             <ol class="breadcrumb d-none d-lg-inline-flex">
                                                 <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
-                                                <li class="breadcrumb-item"><a href="#">Ejercicios para la logica</a></li>
+                                                <li class="breadcrumb-item"><a href="#">Ejercicios para la logica</a>
+                                                </li>
                                             </ol>
                                         </nav>
                                     </div>
@@ -113,30 +101,33 @@ function solution(inputString){
                             Si la entrada es: "aabaa", la respuesta deberá ser "true"
 
                             <div>
-                                <div class="accordion accordion-stack" id="accordion-2">
+                                <div class="accordion accordion-stack" id="accordion-2" v-for="({name, solution}) in globalData">
                                     <div class="card active">
-                                      <div class="card-header" id="heading-2-1">
-                                        <h5 class="mb-0">
-                                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-2-1" aria-expanded="true" aria-controls="collapse-2-1">
-                                            Solución de: {{ name }}
-                                          </button>
-                                        </h5>
-                                      </div>
-                                  
-                                      <div id="collapse-2-1" class="collapse show" aria-labelledby="heading-2-1" data-parent="#accordion-2">
-                                        <div class="card-body">
-                                            <pre><code class="language-js">
+                                        <div class="card-header" id="heading-2-1">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                                    data-target="#collapse-2-1" aria-expanded="true"
+                                                    aria-controls="collapse-2-1">
+                                                    Solución de: {{ name }}
+                                                </button>
+                                            </h5>
+                                        </div>
+
+                                        <div id="collapse-2-1" class="collapse show" aria-labelledby="heading-2-1"
+                                            data-parent="#accordion-2">
+                                            <div class="card-body">
+                                                <pre><code class="language-js">
                                                     {{ solution }}
                                             </code></pre>
-                                            
+
+                                            </div>
                                         </div>
-                                      </div>
                                     </div>
-                                  </div>
-                            </div>  
+                                </div>
+                            </div>
                             <div class="card-footer d-flex justify-content-between">
-                                <p><span class="fa fa-eye"></span> OJO! Puedes codificarlo en PHP o JS.</p>
-                                <p>Guarda tu codificación y enviamela</p>
+                                <p><span class="fa fa-eye"></span> Puedes codificarlo en tu local o usar https://codesandbox.io/</p>
+                                <p>Guarda tu codificación y compartela para que sea añadido a la lista</p>
                             </div>
 
                         </article>
@@ -192,55 +183,53 @@ function solution(inputString){
     <!-- / footer -->
 
 
+    <script src="../../assets/js/vendor.min.js"></script>
+    <script src="../../assets/js/app.js"></script>
     <script>
         const {
             createApp
-        } = Vue
-    
+        } = Vue;
+        
+
         createApp({
             data() {
                 return {
                     ws: '/services/',
                     globalData: [{
-                            "name": "Alex",
-                            "solution": `
-    const palindromo = (cadena) => {
-        let invertido = cadena.split("").reverse().join("");
-        return invertido === cadena; 
-    };
-    
-    console.log(palindromo("otto"));`
-                        },
-                        {
-                            "name": "Aline",
-                            "solution": `
-    function solution(inputString) {
-        let validate = true;
-        let arrayWord = [...inputString];
-        let j = arrayWord.length -1;
-        for(let i = 0 ; i < arrayWord.length; i++)
-        {
-            if (arrayWord[i] !== arrayWord[j]){
-                validate = false;
-            }
-            j--;
+                        "name": "Alex",
+                        "solution": `
+const palindromo = (cadena) => {
+    let invertido = cadena.split("").reverse().join("");
+    return invertido === cadena; 
+};
+
+console.log(palindromo("otto"));`
+                    },
+                    {
+                        "name": "Aline",
+                        "solution": `
+function solution(inputString) {
+    let validate = true;
+    let arrayWord = [...inputString];
+    let j = arrayWord.length -1;
+    for(let i = 0 ; i < arrayWord.length; i++)
+    {
+        if (arrayWord[i] !== arrayWord[j]){
+            validate = false;
         }
-        return validate;
+        j--;
     }
-    
-    console.log(solution("aabaa"));
-                        `
-                        }
-                    ],
+    return validate;
+}
+
+console.log(solution("aabaa"));
+                    `
+                    }],
                 }
-            },
-            mounted() {},
-            methods() {},
-    
+            }
+
         }).mount('#app')
     </script>
-    <script src="../../assets/js/vendor.min.js"></script>
-    <script src="../../assets/js/app.js"></script>
 </body>
 
 
